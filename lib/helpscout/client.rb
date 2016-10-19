@@ -911,5 +911,11 @@ module HelpScout
         false
       end
     end
+
+    def first_response_time(start_date, end_date)
+      url = "/reports/productivity/first-response-time.json"
+
+      Client.request_item(@auth, url, start: start_date, end: end_date)
+    end
   end
 end
